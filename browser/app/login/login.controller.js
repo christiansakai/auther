@@ -3,6 +3,7 @@ app.controller('LoginCtrl', function($scope, Auth) {
     Auth.login($scope.email,$scope.password)
     .then(function(user) {
     	console.log(user)
+      // console.log(Auth.getUserSession())
     })
     // console.log($scope.email);
     // console.log($scope.password);

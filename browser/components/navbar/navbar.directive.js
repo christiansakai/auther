@@ -16,6 +16,14 @@ app.directive('navbar', function ($state, $location, Auth) {
 					console.log(response)
 				})
 			}
+			// scope.getLoggedIn = function() {
+			// 	return Auth.getLoggedIn();
+			// }
+			Auth.getLoggedIn()
+			.then(function(loginJson) {
+				scope.isLoggedIn = loginJson.loggedIn;
+				console.log("SCOPE",loginJson);
+			});
 		}
 	}
 });

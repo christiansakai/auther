@@ -19,7 +19,11 @@ router.post('/',function(req,res,next) {
     	// console.log("This is user:", user)
     	req.session.userId = user._id
     	req.session.isAdmin = user.isAdmin
-    	res.status(200).send(user);	
+    	res.json(user);
+      // res.status(200).send({
+      //   userId: user._id,
+      //   isAdmin: req.session.isAdmin
+      // });	
     }
   })
   .then(null,next)

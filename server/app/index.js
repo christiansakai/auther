@@ -15,11 +15,11 @@ var session = require('express-session');
 //********************************************
 app.use(session({
     // this mandatory configuration ensures that session IDs are not predictable
-    secret: 'tongiscool',
+    secret: 'tongiscool'
     //we add in cookie below in the Session Bonus:
-    cookie: {
-    	maxAge: 600000
-    }
+    // cookie: {
+    // 	maxAge: 600000
+    // }
 }));
 
 app.use(function (req, res, next) {

@@ -12,7 +12,8 @@ router.post('/',function(req,res,next) {
   .then(function(user) {
     if (!user) throw HttpError(401);
     // console.log(user);
-    res.status(200).send(user);
+    // res.status(200).send(user);
+    res.json(user);
   })
   .then(null,next)
 })
