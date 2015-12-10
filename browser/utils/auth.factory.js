@@ -11,6 +11,9 @@ app.factory('Auth', function($http) {
         email: email,
         password: password
       })
+    },
+    logout: function() {
+      return $http.delete('/api/logout')
     }
   }
 })
