@@ -2,7 +2,7 @@ app.factory('Auth', function($http) {
   var userSession;
   return {
     signup: function(email, password) {
-      return $http.post('/api/signup',{
+      return $http.post('/auth/signup',{
         email: email,
         password: password
       })
@@ -13,7 +13,7 @@ app.factory('Auth', function($http) {
       })
     },
     login: function(email, password) {
-      return $http.post('/api/login',{
+      return $http.post('/auth/login',{
         email: email,
         password: password
       })
@@ -23,14 +23,17 @@ app.factory('Auth', function($http) {
       })
     },
     logout: function() {
-      return $http.delete('/api/logout')
+      return $http.delete('/auth/logout')
     },
     getLoggedIn: function() {
-      return $http.get('/api/me')
+      return $http.get('/auth/me')
       .then(function(res) {
         return res.data;
       });
       // return userSession ? true : false;
+    },
+    googleLogin: function() {
+      return $http.get('/auth/google');
     }
     // getIsAdmin: function() {
     //   return userSession.isAdmin;

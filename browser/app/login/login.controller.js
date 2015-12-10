@@ -9,5 +9,11 @@ app.controller('LoginCtrl', function($scope, Auth) {
     // console.log($scope.password);
     // console.log($scope.loginForm);  
   }
+  $scope.googleLogin = function() {
+    Auth.googleLogin()
+    .then(function(stuff) {
+      console.log(stuff);
+    });
+  }
 
 })
